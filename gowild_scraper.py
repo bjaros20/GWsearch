@@ -1,7 +1,7 @@
 import random, time, requests, json, html
 from bs4 import BeautifulSoup
 from datetime import datetime, timedelta
-import browsercookie
+import browser_cookie3 as browsercookie
 import argparse
 
 '''optional arguments:
@@ -143,7 +143,7 @@ def get_flight_html(origin, date, session, cjs, roundtrip, start_index=0, destin
         header = {
             "User-Agent": generate_user_agent(),
         }
-        cj = browsercookie.chrome() if cjs else None
+        cj = browsercookie.chrome(profile='4') if cjs else None
         time.sleep(random.uniform(0.5,1.5))
         #time.sleep(random.uniform(0.5,1.5))
         # Get schedule data for the route
